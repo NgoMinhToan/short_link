@@ -18,6 +18,7 @@ const Result = () => {
     const { checkResult, createResult, shortLink, checkShortLink, url, setKeyListen } = useResultContext();
     const [errorShortLink, setErrorShortLink] = useState('');
     const [errorUrl, setErrorUrl] = useState('');
+    const [warning, setWarning] = useState('');
     const [disableButton, setDisableButton] = useState(true);
     const domain = `http://${window.location.host}`
 
@@ -70,17 +71,23 @@ const Result = () => {
 
     useEffect(() => {
         if(createResult.success == true){
-            setDisableButton(false)
+            if(window.location.protocol === 'https:'){
+                setDisableButton(false)
+            }else{
+                setWarning('You need to copy the link by yourself cause the page is not secure and the copy button is disabled')
+                setDisableButton(true)
+            }
         }else{
             setErrorShortLink(createResult.error)
         }
     }, [createResult])
 
     return (
-        <div className='relative'>
-            <div className='relative mb-10'>
+        <div className='relative w-full'>
+            <div className='relative mb-5 w-full'>
                 <input 
                     className='
+                        w-full
                         bg-blue-900 
                         bg-opacity-30 
                         rounded-full
@@ -95,7 +102,7 @@ const Result = () => {
                 <button
                     className='
                         absolute 
-                        -right-10
+                        right-0
                         top-0 p-2 
                         bg-blue-900 
                         bg-opacity-30 
@@ -116,6 +123,7 @@ const Result = () => {
             <div className='absolute'>
                 <p className='text-red-900 font-bold text-sm'>{errorUrl && `- ${errorUrl}`}</p>
                 <p className='text-red-900 font-bold text-sm'>{errorShortLink && `- ${errorShortLink}`}</p>
+                <p className='text-yellow-900 font-bold text-sm'>{warning && `- ${warning}`}</p>
             </div>
         </div>
         

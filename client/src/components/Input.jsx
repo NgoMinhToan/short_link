@@ -54,8 +54,8 @@ const Input = () => {
   }, [keyListen])
 
   return (
-    <div className='flex flex-col jusify-space-between'>
-      <div className='relative mb-10'>
+    <div className='flex flex-col jusify-space-between w-full'>
+      <div className='relative mb-10 w-full'>
         <input 
           id='url' 
           type="text" 
@@ -63,7 +63,7 @@ const Input = () => {
           value={textUrl} 
           onChange={(e) => setTextUrl(e.target.value)} 
           className='
-            w-96 
+            w-full
             p-5 
             bg-blue-900 
             bg-opacity-30 
@@ -91,7 +91,7 @@ const Input = () => {
           Paste your link here !
         </label>
       </div>
-      <div className='relative'>
+      <div className='relative w-full'>
         <input 
           id='shorkLink' 
           type="text" 
@@ -99,7 +99,7 @@ const Input = () => {
           value={textShortLink} 
           onChange={(e) => setTextShortLink(e.target.value)} 
           className='
-            w-96 
+            w-full
             p-5 
             bg-blue-900 
             bg-opacity-30 
