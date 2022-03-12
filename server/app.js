@@ -6,7 +6,10 @@ require('dotenv').config()
 require('./mongo_db')
 
 const path = require('path')
-app.use(express.static(path.join(__dirname, 'public')))
+// app.use(express.static(path.join(__dirname, 'public')))
+
+// Have Node serve the files for our built React app
+app.use(express.static(path.resolve(__dirname, '../client/build')));
 
 const bodyParser = require('body-parser')
 
