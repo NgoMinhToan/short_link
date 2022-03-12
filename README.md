@@ -1,5 +1,5 @@
-# short_link
-Web help shorten link !
+# Short_link
+This Website help shorten link !
 
 App contain 2 part:
 - Server: service as an api for client. Connect database Mongo and save new link and short link requested by client
@@ -10,3 +10,6 @@ Also contain a .env file the provide infomation about:
 - MONGO_USERNAME
 - MONGO_PASSWORD
 - MONGO_DBNAME
+
+# Public available link
+- http://rutlink.site
