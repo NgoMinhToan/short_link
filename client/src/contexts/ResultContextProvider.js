@@ -14,7 +14,7 @@ export const ResultContextProvider = ({ children }) => {
 
     const checkShortLink = async (shortLink) => {
         setIsLoading(true)
-        const response = await fetch(`${baseUrl}/check?shortLink=${shortLink}`, {
+        const response = await fetch(`${baseUrl}/check?shortLink=${shortLink.toUpperCase()}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'

@@ -8,9 +8,6 @@ require('./mongo_db')
 const path = require('path')
 // app.use(express.static(path.join(__dirname, 'public')))
 
-// Have Node serve the files for our built React app
-app.use(express.static(path.resolve(__dirname, '../client/build')));
-
 const bodyParser = require('body-parser')
 
 // for parsing application/x-www-form-urlencoded
@@ -21,9 +18,9 @@ app.use(bodyParser.json())
 
 const linkModel = require('./model')
 
-app.get('/', (req, res) => {
-    res.send('Wellcome to shorten link api !')
-})
+// app.get('/', (req, res) => {
+//     res.send('Wellcome to shorten link api !')
+// })
 
 
 app.get('/api/check', (req, res) => {
@@ -63,6 +60,11 @@ app.post('/api/save', (req, res) => {
         res.json({ ...err, success: false, error: err.toString()})
     })
 })
+
+
+// Have Node serve the files for our built React app
+app.use(express.static(path.resolve(__dirname, '../client/build')));
+
 
 const port = process.env.PORT || 5000
 app.listen(port, () => {
