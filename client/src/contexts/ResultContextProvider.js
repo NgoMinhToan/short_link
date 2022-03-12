@@ -31,7 +31,7 @@ export const ResultContextProvider = ({ children }) => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ baseLink, shortLink  })
+            body: JSON.stringify({ baseLink, shortLink: shortLink.toUpperCase() })
         })
         const data = await response.json()
         setCreateResult(data)
