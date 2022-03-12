@@ -25,5 +25,7 @@ linkSchema.pre('save', function (next) {
     next()
 })
 
-const linkModel = mongoose.model(process.env.MONGO_COLLECTION, linkSchema)
+const collection = process.env.MONGO_COLLECTION || 'area_1'
+
+const linkModel = mongoose.model(collection, linkSchema)
 module.exports = linkModel
