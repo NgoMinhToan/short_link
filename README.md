@@ -10,6 +10,7 @@ Also contain a .env file the provide infomation about:
 - MONGO_USERNAME
 - MONGO_PASSWORD
 - MONGO_DBNAME
+- MONGO_COLLECTION
 
 # Public available link
 - http://rutlink.site
