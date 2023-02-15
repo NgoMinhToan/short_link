@@ -22,8 +22,10 @@ git clone https://github.com/NgoMinhToan/short_link
 3. Edit docker-compose file
 4. Paste url to "REACT_APP_SHORTENER_API_URL" arguments in client
 
-- run docker command
+- Run docker command
 ```bash
 cd short_link
 docker compose up
 ```
+
+- Open web at port 3000!
