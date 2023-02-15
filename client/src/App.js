@@ -11,7 +11,7 @@ const App = () => {
             <div className='bg-gray-100 dark:bg-gray-900 dark:text-gray-200 min-h-screen min-w-screen'>
                 <div className='flex flex-wrap justify-center items-center h-screen w-screen flex-col'>
                     <div>
-                        <h1 className='text-6xl uppercase font-bold'>Shoten Link</h1>
+                        <h1 className='text-6xl uppercase font-bold'>Shorten Link</h1>
                     </div>
                     <Routes>
                         <Route path='/' element={<Home />} />

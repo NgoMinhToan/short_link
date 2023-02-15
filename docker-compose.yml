@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  server:
+    build: 
+      context: server
+      target: server-api
+    container_name: server
+    restart: always
+    env_file:
+      - docker.env
+    ports:
+      - "5000:5000"
+
+  client:
+    build: 
+      context: client
+      target: react-app
+      args:
+        - REACT_APP_SHORTENER_API_URL=http://localhost:5000/api  # Change this value to your server url api
+    container_name: client
+    restart: always
+    ports:
+      - "3000:80"
+    

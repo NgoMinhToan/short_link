@@ -1,8 +1,8 @@
 import React, { useState, useContext, createContext } from 'react'
 
 const ResultContext = createContext()
-// const baseUrl = process.env.REACT_APP_SHORTENER_API_URL || 'http://localhost:5000'
-const baseUrl = '/api'
+const baseUrl = process.env.REACT_APP_SHORTENER_API_URL || 'http://localhost:5000/api'
+// const baseUrl = '/api'
 
 export const ResultContextProvider = ({ children }) => {
     const [checkResult, setCheckResult] = useState({});
