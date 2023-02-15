@@ -14,5 +14,16 @@
 
 # Play with docker
 ```bash
+git clone https://github.com/NgoMinhToan/short_link
+```
+- Set api url to client:
+1. Click "OPEN PORT" button and type 5000(server-port)
+2. Copy the url of open tab
+3. Edit docker-compose file
+4. Paste url to "REACT_APP_SHORTENER_API_URL" arguments in client
 
+- run docker command
+```bash
+cd short_link
+docker compose up
 ```

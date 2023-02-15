@@ -17,7 +17,7 @@ services:
       context: client
       target: react-app
       args:
-        - REACT_APP_SHORTENER_API_URL=http://localhost:5000/api  # Change this value to your server url api
+        - REACT_APP_SHORTENER_API_URL=http://localhost:5000  # Change this value to your server url api
     container_name: client
     restart: always
     ports:
